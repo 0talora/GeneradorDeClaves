@@ -1,5 +1,6 @@
-<main class="contenedor">
-  <header>
+<header class="cabecera">
+  <div class="barra">
+    <span class="marca">otalora</span>
     <div class="idioma">
       <label for="language">{{ strings.language }}</label>
       <select id="language" [ngModel]="language" (ngModelChange)="changeLanguage($event)">
@@ -8,8 +9,23 @@
         }
       </select>
     </div>
-    <h1>{{ strings.title }}</h1>
-    <p>{{ strings.description }}</p>
+  </div>
+</header>
+
+<main class="contenedor">
+  <header>
+    <div class="introduccion">
+      <div>
+        <h1>{{ strings.title }}</h1>
+        <p>{{ strings.description }}</p>
+      </div>
+      <div class="emblema" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+          <rect x="6" y="14" width="20" height="14" rx="3"/>
+          <path d="M10 14V9a6 6 0 0 1 12 0v5m-6 6v3"/>
+        </svg>
+      </div>
+    </div>
   </header>
 
   <section class="generador" [attr.aria-label]="strings.title">
@@ -23,7 +39,7 @@
       </div>
 
       <div class="longitud">
-        <label for="length">{{ strings.length }} <span aria-hidden="true">· {{ longitud }}</span></label>
+        <label for="length">{{ strings.length }} <span aria-hidden="true">{{ longitud }}</span></label>
         <input type="range" id="length" min="4" max="100" [(ngModel)]="longitud" (ngModelChange)="generarClave()">
       </div>
     </fieldset>
@@ -31,7 +47,7 @@
     <div class="resultado">
       <h2>{{ strings.result }}</h2>
       <p class="clave" dir="ltr"><code>{{ claveGenerada }}</code></p>
-      <p class="estado" role="status">
+      <p class="estado fortaleza" role="status">
         @if (copyAvailable) {
           {{ strings.strength }} · {{ strings.strengths[nivelSeguridad] }}
         } @else {
