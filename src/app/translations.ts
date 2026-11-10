@@ -26,7 +26,9 @@ export const translations = {
     generate: 'Generar contraseña',
     copied: 'Contraseña copiada.',
     copyFailed: 'No se pudo copiar. Selecciona la contraseña y cópiala manualmente.',
-    noGroups: 'Selecciona al menos un tipo de carácter.'
+    noGroups: 'Selecciona al menos un tipo de carácter.',
+    developed: 'Desarrollado con',
+    by: 'por Pablo Otalora'
   },
   en: {
     title: 'Password generator',
@@ -46,7 +48,9 @@ export const translations = {
     generate: 'Generate password',
     copied: 'Password copied.',
     copyFailed: 'Could not copy. Select the password and copy it manually.',
-    noGroups: 'Select at least one character type.'
+    noGroups: 'Select at least one character type.',
+    developed: 'Built with',
+    by: 'by Pablo Otalora'
   },
   fr: {
     title: 'Générateur de mots de passe',
@@ -66,7 +70,9 @@ export const translations = {
     generate: 'Générer un mot de passe',
     copied: 'Mot de passe copié.',
     copyFailed: 'La copie a échoué. Sélectionnez le mot de passe et copiez-le manuellement.',
-    noGroups: 'Sélectionnez au moins un type de caractère.'
+    noGroups: 'Sélectionnez au moins un type de caractère.',
+    developed: 'Développé avec',
+    by: 'par Pablo Otalora'
   },
   de: {
     title: 'Passwortgenerator',
@@ -86,6 +92,8 @@ export const translations = {
     generate: 'Passwort generieren',
     copied: 'Passwort kopiert.',
     copyFailed: 'Kopieren fehlgeschlagen. Wähle das Passwort aus und kopiere es manuell.',
-    noGroups: 'Wähle mindestens einen Zeichentyp aus.'
+    noGroups: 'Wähle mindestens einen Zeichentyp aus.',
+    developed: 'Entwickelt mit',
+    by: 'von Pablo Otalora'
   }
 };
