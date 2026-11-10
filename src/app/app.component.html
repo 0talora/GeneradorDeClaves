@@ -1,56 +1,49 @@
-<div class="contenedor-principal">
-
-  <div class="titulo">
-    <h2>Generador de contraseñas</h2>
-  </div>
-
-  <div class="generador">
-    <div class="toast" [class.show]="mostrarToast">¡Clave copiada!</div>
-
-    <div class="clave">
-      <span>{{ claveGenerada }}</span>
-      <img class="btn-copiar-img" src="assets/imgs/copy.svg" alt="Copiar" (click)="copiarClave()">
-
+<main class="contenedor">
+  <header>
+    <div class="idioma">
+      <label for="language">{{ strings.language }}</label>
+      <select id="language" [ngModel]="language" (ngModelChange)="changeLanguage($event)">
+        @for (code of languageCodes; track code) {
+          <option [value]="code" [attr.lang]="code">{{ languages[code] }}</option>
+        }
+      </select>
     </div>
+    <h1>{{ strings.title }}</h1>
+    <p>{{ strings.description }}</p>
+  </header>
 
-    <div class="indicador-seguridad" [ngClass]="nivelSeguridad.toLowerCase()">
-      Seguridad: {{ nivelSeguridad }}
-    </div>
-
-    <div class="configuracion">
-      <div class="mayusDiv">
-        <input type="checkbox" [(ngModel)]="mayus" (change)="generarClave()">
-        <span>Mayúsculas</span>
+  <section class="generador" [attr.aria-label]="strings.title">
+    <fieldset>
+      <legend>{{ strings.settings }}</legend>
+      <div class="opciones">
+        <label><input type="checkbox" [(ngModel)]="mayus" (ngModelChange)="generarClave()"> {{ strings.uppercase }}</label>
+        <label><input type="checkbox" [(ngModel)]="min" (ngModelChange)="generarClave()"> {{ strings.lowercase }}</label>
+        <label><input type="checkbox" [(ngModel)]="nums" (ngModelChange)="generarClave()"> {{ strings.digits }}</label>
+        <label><input type="checkbox" [(ngModel)]="simbolos" (ngModelChange)="generarClave()"> {{ strings.symbols }}</label>
       </div>
 
-      <div class="minDiv">
-        <input type="checkbox" [(ngModel)]="min" (change)="generarClave()">
-        <span>Minúsculas</span>
+      <div class="longitud">
+        <label for="length">{{ strings.length }} <span aria-hidden="true">· {{ longitud }}</span></label>
+        <input type="range" id="length" min="4" max="100" [(ngModel)]="longitud" (ngModelChange)="generarClave()">
       </div>
+    </fieldset>
 
-      <div class="simbolosDiv">
-        <input type="checkbox" [(ngModel)]="simbolos" (change)="generarClave()">
-        <span>Símbolos</span>
-      </div>
-
-      <div class="numsDiv">
-        <input type="checkbox" [(ngModel)]="nums" (change)="generarClave()">
-        <span>Números</span>
-      </div>
-
-      <input type="range" id="length" name="length" min="4" max="100" (input)="generarClave()" [(ngModel)]="longitud">
-      <label>Longitud de la contraseña: {{longitud}}</label>
+    <div class="resultado">
+      <h2>{{ strings.result }}</h2>
+      <p class="clave" dir="ltr"><code>{{ claveGenerada }}</code></p>
+      <p class="estado" role="status">
+        @if (copyAvailable) {
+          {{ strings.strength }} · {{ strings.strengths[nivelSeguridad] }}
+        } @else {
+          {{ strings.noGroups }}
+        }
+      </p>
     </div>
 
-    <div class="btnGenerar">
-
-      <button class="btn-copiar-movil" (click)="copiarClave()">Copiar</button>
-
-      <button (click)="generarClave()">Generar</button>
+    <div class="acciones">
+      <button type="button" class="principal" (click)="generarClave()" [disabled]="!copyAvailable">{{ strings.generate }}</button>
+      <button type="button" (click)="copiarClave()" [disabled]="!copyAvailable">{{ strings.copy }}</button>
     </div>
-
-  </div>
-
-</div>
-
-<router-outlet />
+    <p class="estado" role="status">{{ copyStatus ? strings[copyStatus] : '' }}</p>
+  </section>
+</main>

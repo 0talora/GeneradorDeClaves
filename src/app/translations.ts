@@ -1,0 +1,91 @@
+export const languages = {
+  es: 'Español',
+  en: 'English',
+  fr: 'Français',
+  de: 'Deutsch'
+};
+
+export type Language = keyof typeof languages;
+
+export const translations = {
+  es: {
+    title: 'Generador de contraseñas',
+    pageTitle: 'Generador de contraseñas seguras online y gratis',
+    description: 'Crea contraseñas aleatorias de 4 a 100 caracteres con mayúsculas, minúsculas, números y símbolos. Se generan en tu navegador.',
+    language: 'Idioma',
+    settings: 'Opciones de la contraseña',
+    uppercase: 'Mayúsculas',
+    lowercase: 'Minúsculas',
+    digits: 'Números',
+    symbols: 'Símbolos',
+    length: 'Longitud de la contraseña',
+    result: 'Contraseña generada',
+    strength: 'Fortaleza estimada',
+    strengths: ['Débil', 'Media', 'Fuerte', 'Muy fuerte'],
+    copy: 'Copiar',
+    generate: 'Generar contraseña',
+    copied: 'Contraseña copiada.',
+    copyFailed: 'No se pudo copiar. Selecciona la contraseña y cópiala manualmente.',
+    noGroups: 'Selecciona al menos un tipo de carácter.'
+  },
+  en: {
+    title: 'Password generator',
+    pageTitle: 'Free secure password generator online',
+    description: 'Create random passwords from 4 to 100 characters with uppercase letters, lowercase letters, numbers and symbols. Passwords are generated in your browser.',
+    language: 'Language',
+    settings: 'Password options',
+    uppercase: 'Uppercase letters',
+    lowercase: 'Lowercase letters',
+    digits: 'Numbers',
+    symbols: 'Symbols',
+    length: 'Password length',
+    result: 'Generated password',
+    strength: 'Estimated strength',
+    strengths: ['Weak', 'Medium', 'Strong', 'Very strong'],
+    copy: 'Copy',
+    generate: 'Generate password',
+    copied: 'Password copied.',
+    copyFailed: 'Could not copy. Select the password and copy it manually.',
+    noGroups: 'Select at least one character type.'
+  },
+  fr: {
+    title: 'Générateur de mots de passe',
+    pageTitle: 'Générateur gratuit de mots de passe sécurisés en ligne',
+    description: 'Créez des mots de passe aléatoires de 4 à 100 caractères avec des majuscules, des minuscules, des chiffres et des symboles. Ils sont générés dans votre navigateur.',
+    language: 'Langue',
+    settings: 'Options du mot de passe',
+    uppercase: 'Majuscules',
+    lowercase: 'Minuscules',
+    digits: 'Chiffres',
+    symbols: 'Symboles',
+    length: 'Longueur du mot de passe',
+    result: 'Mot de passe généré',
+    strength: 'Robustesse estimée',
+    strengths: ['Faible', 'Moyenne', 'Forte', 'Très forte'],
+    copy: 'Copier',
+    generate: 'Générer un mot de passe',
+    copied: 'Mot de passe copié.',
+    copyFailed: 'La copie a échoué. Sélectionnez le mot de passe et copiez-le manuellement.',
+    noGroups: 'Sélectionnez au moins un type de caractère.'
+  },
+  de: {
+    title: 'Passwortgenerator',
+    pageTitle: 'Kostenloser Online-Passwortgenerator für sichere Passwörter',
+    description: 'Erstelle zufällige Passwörter mit 4 bis 100 Zeichen aus Großbuchstaben, Kleinbuchstaben, Zahlen und Sonderzeichen. Die Passwörter werden in deinem Browser erzeugt.',
+    language: 'Sprache',
+    settings: 'Passwortoptionen',
+    uppercase: 'Großbuchstaben',
+    lowercase: 'Kleinbuchstaben',
+    digits: 'Zahlen',
+    symbols: 'Sonderzeichen',
+    length: 'Passwortlänge',
+    result: 'Generiertes Passwort',
+    strength: 'Geschätzte Stärke',
+    strengths: ['Schwach', 'Mittel', 'Stark', 'Sehr stark'],
+    copy: 'Kopieren',
+    generate: 'Passwort generieren',
+    copied: 'Passwort kopiert.',
+    copyFailed: 'Kopieren fehlgeschlagen. Wähle das Passwort aus und kopiere es manuell.',
+    noGroups: 'Wähle mindestens einen Zeichentyp aus.'
+  }
+};
