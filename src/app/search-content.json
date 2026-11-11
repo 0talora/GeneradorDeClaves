@@ -1,0 +1,55 @@
+{
+  "es": {
+    "title": "Generador de contraseñas seguras",
+    "pageTitle": "Generador de claves y contraseñas seguras gratis | Otalora",
+    "description": "Crea claves aleatorias de 4 a 100 caracteres con letras, números y símbolos. Generador de contraseñas gratis, sin registro y en tu navegador.",
+    "guide": "Cómo crear una contraseña segura",
+    "steps": ["Elige la longitud. Empieza con 16 caracteres y aumenta el tamaño si el servicio lo admite.", "Activa las letras, los números y los símbolos que permita el sitio donde vas a usar la clave.", "Genera una contraseña nueva, cópiala y guárdala en tu gestor de contraseñas. Usa una distinta para cada cuenta."],
+    "questions": [
+      ["¿Cómo se genera una clave aleatoria?", "El generador utiliza Web Crypto, la fuente de aleatoriedad criptográfica del navegador. La contraseña se crea en tu dispositivo y la aplicación no la envía a ningún servidor."],
+      ["¿Puedo generar una contraseña sin símbolos?", "Sí. Desactiva Símbolos y conserva los tipos de caracteres que acepte el servicio. Si tienes que limitar los tipos de caracteres, usa la mayor longitud que permita el sitio."],
+      ["¿Qué longitud debe tener mi contraseña?", "Para una cuenta, empieza con 16 caracteres aleatorios y usa más si puedes. La herramienta admite desde 4 hasta 100 caracteres por compatibilidad, pero una clave de 4 caracteres es demasiado corta para proteger una cuenta."],
+      ["¿Puedo usar la clave para el Wi-Fi?", "Sí, elige una clave larga y comprueba los requisitos de tu router. Usa una contraseña diferente para entrar en el panel de administración y otra para conectarte a la red."]
+    ],
+    "noscript": "Activa JavaScript para generar una contraseña."
+  },
+  "en": {
+    "title": "Password generator",
+    "pageTitle": "Free Secure Password Generator Online | Otalora",
+    "description": "Generate random passwords from 4 to 100 characters using letters, numbers and symbols. Free, no sign-up, and passwords are created in your browser.",
+    "guide": "How to generate a strong password",
+    "steps": ["Start with 16 characters and go longer if the service allows it.", "Choose the letters, numbers and symbols accepted by the service.", "Generate and copy your password, then save it in a password manager. Use a unique password for each account."],
+    "questions": [
+      ["How are random passwords generated?", "This tool uses the browser’s cryptographically secure Web Crypto API. It creates passwords on your device and does not send them to a server."],
+      ["Can I generate a password without symbols?", "Yes. Turn off Symbols and keep the character types the service accepts. Choose a longer password if the service limits the available characters."],
+      ["How long should my password be?", "Start with 16 random characters for an account and use more when possible. The tool supports 4 to 100 characters for compatibility, but four characters are too short to protect an account."]
+    ],
+    "noscript": "Enable JavaScript to generate a password."
+  },
+  "fr": {
+    "title": "Générateur de mots de passe",
+    "pageTitle": "Générateur de mots de passe sécurisés gratuit | Otalora",
+    "description": "Créez des mots de passe aléatoires de 4 à 100 caractères avec lettres, chiffres et symboles. Gratuit, sans inscription et directement dans votre navigateur.",
+    "guide": "Comment créer un mot de passe robuste",
+    "steps": ["Choisissez au moins 16 caractères si le service le permet.", "Sélectionnez les lettres, chiffres et symboles acceptés par le service.", "Générez et copiez le mot de passe, puis enregistrez-le dans votre gestionnaire. Utilisez un mot de passe unique pour chaque compte."],
+    "questions": [
+      ["Comment le mot de passe est-il généré ?", "L’outil utilise l’API cryptographique Web Crypto. Votre navigateur crée le mot de passe sur votre appareil sans l’envoyer à un serveur."],
+      ["Puis-je créer un mot de passe sans symboles ?", "Oui. Désactivez les symboles et conservez les types de caractères acceptés. Si le choix de caractères est limité, privilégiez un mot de passe plus long."],
+      ["Quelle longueur choisir ?", "Commencez avec 16 caractères aléatoires pour un compte. L’outil accepte de 4 à 100 caractères pour des raisons de compatibilité. Quatre caractères sont insuffisants pour protéger un compte."]
+    ],
+    "noscript": "Activez JavaScript pour générer un mot de passe."
+  },
+  "de": {
+    "title": "Passwortgenerator",
+    "pageTitle": "Kostenloser Online-Passwortgenerator | Otalora",
+    "description": "Erstelle zufällige Passwörter mit 4 bis 100 Zeichen aus Buchstaben, Zahlen und Sonderzeichen. Kostenlos, ohne Anmeldung und direkt im Browser.",
+    "guide": "So erstellst du ein starkes Passwort",
+    "steps": ["Wähle zunächst 16 Zeichen und erhöhe die Länge, wenn der Dienst es zulässt.", "Wähle die Buchstaben, Zahlen und Sonderzeichen, die der Dienst akzeptiert.", "Erstelle und kopiere das Passwort und speichere es in einem Passwortmanager. Verwende für jedes Konto ein eigenes Passwort."],
+    "questions": [
+      ["Wie wird ein zufälliges Passwort erzeugt?", "Das Tool nutzt die kryptografisch sichere Web-Crypto-API. Dein Browser erzeugt das Passwort auf deinem Gerät und sendet es nicht an einen Server."],
+      ["Kann ich ein Passwort ohne Sonderzeichen erstellen?", "Ja. Deaktiviere Sonderzeichen und verwende die Zeichentypen, die der Dienst akzeptiert. Wenn die Auswahl eingeschränkt ist, wähle ein längeres Passwort."],
+      ["Wie lang sollte ein Passwort sein?", "Beginne mit 16 zufälligen Zeichen und verwende nach Möglichkeit mehr. Das Tool unterstützt 4 bis 100 Zeichen. Vier Zeichen reichen zum Schutz eines Kontos nicht aus."]
+    ],
+    "noscript": "Aktiviere JavaScript, um ein Passwort zu erstellen."
+  }
+}

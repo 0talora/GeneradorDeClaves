@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
-    "build": "ng build GeneradorClaves --configuration production",
+    "build": "ng build GeneradorClaves --configuration production && node scripts/build-search-pages.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

@@ -26,12 +26,7 @@
                 "input": "public",
                 "output": "./"
               },
-              "src/assets",
-              {
-                "glob": "_redirects",
-                "input": "src/static",
-                "output": "./"
-              }
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"

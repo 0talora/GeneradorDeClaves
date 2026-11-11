@@ -36,7 +36,16 @@ export class AppComponent {
 
   readonly languages = languages;
   readonly languageCodes = Object.keys(languages) as Language[];
-  language = detectLanguage();
+  language = this.getPageLanguage();
+
+  private getPageLanguage(): Language {
+    const language = this.document.documentElement.dataset['pageLanguage'];
+    return language && isLanguage(language) ? language : detectLanguage();
+  }
+
+  languagePath(language: Language): string {
+    return language === 'es' ? '/' : `/${language}/`;
+  }
 
   mayus = true;
   min = true;
@@ -61,6 +70,12 @@ export class AppComponent {
   }
 
   changeLanguage(language: Language): void {
+    const pageLanguage = this.document.documentElement.dataset['pageLanguage'];
+    if (pageLanguage && language !== this.language) {
+      this.document.location.assign(this.languagePath(language));
+      return;
+    }
+
     this.language = language;
     this.updateDocumentLanguage();
     try {

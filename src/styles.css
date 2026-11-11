@@ -49,3 +49,38 @@ button, input, select {
   outline: 3px solid currentColor;
   outline-offset: 4px;
 }
+
+.guia {
+  max-width: 72ch;
+  margin-block-start: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid #323232;
+  border-radius: 1.5rem;
+  background: #101010;
+  overflow-wrap: anywhere;
+}
+
+.guia ol {
+  padding-inline-start: 1.5rem;
+}
+
+.guia li + li {
+  margin-block-start: .4rem;
+}
+
+.guia h3 {
+  margin-block: 1.25rem .3rem;
+}
+
+.idiomas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem 1rem;
+  margin-block-end: .6rem;
+}
+
+app-root > .contenido-estatico {
+  width: min(100% - 2rem, 64rem);
+  margin: 2rem auto;
+}

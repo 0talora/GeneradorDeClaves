@@ -1,3 +1,5 @@
+import searchContent from './search-content.json';
+
 export const languages = {
   es: 'Español',
   en: 'English',
@@ -9,9 +11,7 @@ export type Language = keyof typeof languages;
 
 export const translations = {
   es: {
-    title: 'Generador de contraseñas',
-    pageTitle: 'Generador de contraseñas seguras online y gratis',
-    description: 'Crea contraseñas aleatorias de 4 a 100 caracteres con mayúsculas, minúsculas, números y símbolos. Se generan en tu navegador.',
+    ...searchContent.es,
     language: 'Idioma',
     settings: 'Opciones de la contraseña',
     uppercase: 'Mayúsculas',
@@ -31,9 +31,7 @@ export const translations = {
     by: 'por Pablo Otalora'
   },
   en: {
-    title: 'Password generator',
-    pageTitle: 'Free secure password generator online',
-    description: 'Create random passwords from 4 to 100 characters with uppercase letters, lowercase letters, numbers and symbols. Passwords are generated in your browser.',
+    ...searchContent.en,
     language: 'Language',
     settings: 'Password options',
     uppercase: 'Uppercase letters',
@@ -53,9 +51,7 @@ export const translations = {
     by: 'by Pablo Otalora'
   },
   fr: {
-    title: 'Générateur de mots de passe',
-    pageTitle: 'Générateur gratuit de mots de passe sécurisés en ligne',
-    description: 'Créez des mots de passe aléatoires de 4 à 100 caractères avec des majuscules, des minuscules, des chiffres et des symboles. Ils sont générés dans votre navigateur.',
+    ...searchContent.fr,
     language: 'Langue',
     settings: 'Options du mot de passe',
     uppercase: 'Majuscules',
@@ -75,9 +71,7 @@ export const translations = {
     by: 'par Pablo Otalora'
   },
   de: {
-    title: 'Passwortgenerator',
-    pageTitle: 'Kostenloser Online-Passwortgenerator für sichere Passwörter',
-    description: 'Erstelle zufällige Passwörter mit 4 bis 100 Zeichen aus Großbuchstaben, Kleinbuchstaben, Zahlen und Sonderzeichen. Die Passwörter werden in deinem Browser erzeugt.',
+    ...searchContent.de,
     language: 'Sprache',
     settings: 'Passwortoptionen',
     uppercase: 'Großbuchstaben',

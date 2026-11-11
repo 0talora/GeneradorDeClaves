@@ -28,13 +28,13 @@ ng generate --help
 
 ## Building
 
-To build the project run:
+To build the production site, including the localized HTML, sitemap and robots.txt, run:
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Publish `dist/generador-claves` to the existing host. The canonical origin is `https://passgenerator.otalora.dev`. Serve the directory indexes for `/`, `/en/`, `/fr/` and `/de/`, and return HTTP 404 for unknown URLs. After deployment, submit `/sitemap.xml` in Google Search Console.
 
 ## Running unit tests
 

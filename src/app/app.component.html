@@ -62,7 +62,25 @@
     </div>
     <p class="estado" role="status">{{ copyStatus ? strings[copyStatus] : '' }}</p>
   </section>
+  <section class="guia" aria-labelledby="guia-titulo">
+    <h2 id="guia-titulo">{{ strings.guide }}</h2>
+    <ol>
+      @for (step of strings.steps; track $index) {
+        <li>{{ step }}</li>
+      }
+    </ol>
+    @for (question of strings.questions; track $index) {
+      <h3>{{ question[0] }}</h3>
+      <p>{{ question[1] }}</p>
+    }
+  </section>
 </main>
 <footer class="footer">
+  <nav class="idiomas" [attr.aria-label]="strings.language">
+    @for (code of languageCodes; track code) {
+      <a [href]="languagePath(code)" [attr.hreflang]="code" [attr.lang]="code"
+        [attr.aria-current]="code === language ? 'page' : null">{{ languages[code] }}</a>
+    }
+  </nav>
   <p>{{ strings.developed }} <a href="https://angular.dev/">Angular</a> {{ strings.by }}</p>
 </footer>
