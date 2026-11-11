@@ -12,7 +12,7 @@ export type Language = keyof typeof languages;
 export const translations = {
   es: {
     ...searchContent.es,
-    language: 'Idioma',
+    language: 'Idioma', theme: 'Tema', themeChoices: { system: 'Automático', light: 'Claro', dark: 'Oscuro' },
     settings: 'Opciones de la contraseña',
     uppercase: 'Mayúsculas',
     lowercase: 'Minúsculas',
@@ -32,7 +32,7 @@ export const translations = {
   },
   en: {
     ...searchContent.en,
-    language: 'Language',
+    language: 'Language', theme: 'Theme', themeChoices: { system: 'System', light: 'Light', dark: 'Dark' },
     settings: 'Password options',
     uppercase: 'Uppercase letters',
     lowercase: 'Lowercase letters',
@@ -52,7 +52,7 @@ export const translations = {
   },
   fr: {
     ...searchContent.fr,
-    language: 'Langue',
+    language: 'Langue', theme: 'Thème', themeChoices: { system: 'Automatique', light: 'Clair', dark: 'Sombre' },
     settings: 'Options du mot de passe',
     uppercase: 'Majuscules',
     lowercase: 'Minuscules',
@@ -72,7 +72,7 @@ export const translations = {
   },
   de: {
     ...searchContent.de,
-    language: 'Sprache',
+    language: 'Sprache', theme: 'Design', themeChoices: { system: 'System', light: 'Hell', dark: 'Dunkel' },
     settings: 'Passwortoptionen',
     uppercase: 'Großbuchstaben',
     lowercase: 'Kleinbuchstaben',

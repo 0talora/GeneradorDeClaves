@@ -1,5 +1,5 @@
 :host {
-  --accent: #ff4a4f;
+  --accent: light-dark(#a81928, #ff4a4f);
   --mono: 'Space Mono', ui-monospace, monospace;
   --display: Doto, var(--mono);
 }
@@ -15,26 +15,19 @@
 
 .cabecera {
   border-bottom: 1px solid #2b2b2b;
-  background: #0b0b0b;
-}
-
-.barra, .idioma {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: .65rem;
+  background: light-dark(#fff, #0b0b0b);
 }
 
 .barra {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: .65rem;
   padding: .45rem clamp(1rem, 3vw, 2rem);
 }
 
 .marca {
-  font-family: Doto, 'Space Mono', monospace;
-  font-size: 1.75rem;
-  font-weight: 900;
-  line-height: 1;
+  font: 900 1.75rem/1 var(--display);
   letter-spacing: .04em;
 }
 
@@ -47,21 +40,6 @@
   background: var(--accent);
   box-shadow: 0 0 .65rem #ff4a4f80;
   content: '';
-}
-
-.idioma {
-  font: .875rem/1.4 var(--mono);
-}
-
-select {
-  min-height: 2.75rem;
-  max-width: 100%;
-  padding: .45rem .75rem;
-  border: 1px solid #888780;
-  border-radius: 999px;
-  background: #222;
-  color: #faf9f5;
-  cursor: pointer;
 }
 
 .introduccion {
@@ -118,30 +96,9 @@ p {
   padding: clamp(1rem, 4vw, 2rem);
   border: 1px solid #323232;
   border-radius: 1.5rem;
-  background: #101010;
-  color: #faf9f5;
-  color-scheme: dark;
-}
-
-.footer {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  width: 100%;
-  padding: 1rem;
-  border-top: 1px solid #2b2b2b;
-  background: #0b0b0b;
-  color: #d4d4d4;
-  text-align: center;
-  font: .875rem/1.5 var(--mono);
-}
-
-.footer p {
-  margin: 0;
-}
-
-.footer a {
-  color: var(--accent);
-}
+  background: light-dark(#fff, #101010);
+  color: light-dark(#222, #faf9f5);
+  }
 
 fieldset {
   min-inline-size: 0;
@@ -170,7 +127,7 @@ legend, h2 {
   padding: .45rem .75rem;
   border: 1px solid #888;
   border-radius: .65rem;
-  background: #222;
+  background: light-dark(#f2efe9, #222);
   cursor: pointer;
   overflow-wrap: anywhere;
 }
@@ -218,7 +175,7 @@ input[type="range"] {
   padding: .7rem .85rem;
   border: 1px solid #888;
   border-radius: .75rem;
-  background: #0c0c0c;
+  background: light-dark(#f6f4ef, #0c0c0c);
   font-size: clamp(1.15rem, 4vw, 1.85rem);
   overflow-wrap: anywhere;
   user-select: all;
@@ -230,7 +187,7 @@ code {
 
 .estado {
   min-height: 1.4em;
-  color: #dedbd5;
+  color: light-dark(#3a3833, #dedbd5);
   font: .875rem/1.4 var(--mono);
 }
 
@@ -247,8 +204,8 @@ button {
   padding: .55rem .85rem;
   border: 1px solid #888;
   border-radius: 999px;
-  background: #262626;
-  color: #faf9f5;
+  background: light-dark(#eeebe5, #262626);
+  color: light-dark(#222, #faf9f5);
   font-weight: 700;
   overflow-wrap: anywhere;
   cursor: pointer;
@@ -261,7 +218,7 @@ button {
 }
 
 .generador :focus-visible {
-  outline-color: #faf9f5;
+  outline-color: light-dark(#222, #faf9f5);
 }
 
 button:not(.principal):hover:not(:disabled), .opciones label:hover {

@@ -73,7 +73,7 @@ describe('AppComponent', () => {
     expect(view.querySelector('h1')?.textContent).toBe('Générateur de mots de passe');
     expect(document.documentElement.lang).toBe('fr');
 
-    const select = view.querySelector<HTMLSelectElement>('select')!;
+    const select = view.querySelector<HTMLSelectElement>('#language')!;
     select.value = 'de';
     select.dispatchEvent(new Event('change'));
     fixture.detectChanges();

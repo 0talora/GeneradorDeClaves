@@ -1,3 +1,4 @@
+import { ThemePreference } from './theme-preference';
 import { DOCUMENT } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -10,14 +11,18 @@ function isLanguage(value: string): value is Language {
   return Object.hasOwn(languages, value);
 }
 
-function detectLanguage(): Language {
+type LanguageChoice = Language | 'system';
+
+function readLanguageChoice(): LanguageChoice | null {
   try {
     const saved = localStorage.getItem(languageKey);
-    if (saved && isLanguage(saved)) return saved;
+    return saved && (saved === 'system' || isLanguage(saved)) ? saved : null;
   } catch {
-    // Language detection also works when browser storage is unavailable.
+    return null;
   }
+}
 
+function browserLanguage(): Language {
   const preferred = (navigator.languages.length ? navigator.languages : [navigator.language])
     .map(locale => locale.toLowerCase().split('-')[0]);
   return preferred.find(isLanguage) ?? 'es';
@@ -30,17 +35,26 @@ function detectLanguage(): Language {
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  readonly themePreference = inject(ThemePreference);
   private readonly document = inject(DOCUMENT);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
 
   readonly languages = languages;
   readonly languageCodes = Object.keys(languages) as Language[];
+  private savedLanguage = readLanguageChoice();
   language = this.getPageLanguage();
+
+  get languageChoice(): LanguageChoice {
+    return this.savedLanguage === 'system' && this.language === browserLanguage()
+      ? 'system' : this.language;
+  }
 
   private getPageLanguage(): Language {
     const language = this.document.documentElement.dataset['pageLanguage'];
-    return language && isLanguage(language) ? language : detectLanguage();
+    if (language && isLanguage(language)) return language;
+    return this.savedLanguage && this.savedLanguage !== 'system'
+      ? this.savedLanguage : browserLanguage();
   }
 
   languagePath(language: Language): string {
@@ -69,7 +83,15 @@ export class AppComponent {
     this.generarClave();
   }
 
-  changeLanguage(language: Language): void {
+  changeLanguage(choice: LanguageChoice): void {
+    const language = choice === 'system' ? browserLanguage() : choice;
+    this.savedLanguage = choice;
+    try {
+      localStorage.setItem(languageKey, choice);
+    } catch {
+      // The chosen language remains active for this page.
+    }
+
     const pageLanguage = this.document.documentElement.dataset['pageLanguage'];
     if (pageLanguage && language !== this.language) {
       this.document.location.assign(this.languagePath(language));
@@ -78,11 +100,6 @@ export class AppComponent {
 
     this.language = language;
     this.updateDocumentLanguage();
-    try {
-      localStorage.setItem(languageKey, language);
-    } catch {
-      // The chosen language remains active for this page.
-    }
   }
 
   private updateDocumentLanguage(): void {
