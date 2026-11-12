@@ -21,6 +21,25 @@ const alternateLinks = alternates.map(({ language, url }) =>
   `<link rel="alternate" hreflang="${language}" href="${url}">`
 ).join('\n  ');
 
+const startup = `<style>
+  html[data-app-startup="pending"] [data-app-fallback],
+  [data-app-fallback] + app-root:empty,
+  html[data-app-startup="failed"] [data-app-fallback] + app-root { display: none; }
+</style>
+<script>
+  document.documentElement.dataset.appStartup = 'pending';
+  window.addEventListener('error', function (event) {
+    if (event.target instanceof HTMLScriptElement) {
+      document.documentElement.dataset.appStartup = 'failed';
+    }
+  }, true);
+  window.setTimeout(function () {
+    if (document.documentElement.dataset.appStartup === 'pending') {
+      document.documentElement.dataset.appStartup = 'failed';
+    }
+  }, 10000);
+</script>`;
+
 for (const language of languages) {
   const page = content[language];
   const url = urlFor(language);
@@ -61,7 +80,8 @@ for (const language of languages) {
   const html = template
     .replace('<html lang="es"', `<html lang="${language}" data-page-language="${language}"`)
     .replace(/<!-- search:head -->[\s\S]*?<!-- \/search:head -->/, () => head)
-    .replace(/<app-root>[\s\S]*?<\/app-root>/, () => `<app-root>\n  ${body}\n</app-root>`);
+    .replace('</head>', () => startup + '\n</head>')
+    .replace(/<app-root>[\s\S]*?<\/app-root>/, () => `<div data-app-fallback>${body}</div><app-root></app-root>`);
 
   const directory = new URL('.' + pathFor(language), output);
   await mkdir(directory, { recursive: true });

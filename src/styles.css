@@ -80,7 +80,7 @@ button, input, select {
   margin-block-end: .6rem;
 }
 
-app-root > .contenido-estatico {
+[data-app-fallback] > .contenido-estatico {
   width: min(100% - 2rem, 64rem);
   margin: 2rem auto;
 }
